@@ -1,6 +1,7 @@
 package com.cjtignap;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class GameCard extends JPanel {
     private long timeStarted;
@@ -8,10 +9,12 @@ public class GameCard extends JPanel {
 
     private TimerPanel timerPanel;
     private GameArea gameArea;
-    public GameCard(String sentence){
+    private MenuCard menuCard;
+    public GameCard(String sentence, MenuCard menuCard){
         super();
         this.sentence = sentence;
         this.setLayout(null);
+        this.menuCard = menuCard;
         this.setSize(850,600);
         gameArea = new GameArea(sentence,this);
         gameArea.setLocation(25,25);
@@ -21,7 +24,6 @@ public class GameCard extends JPanel {
 
         this.add(timerPanel);
         this.add(gameArea);
-
         this.setVisible(true);
     }
 
@@ -44,5 +46,8 @@ public class GameCard extends JPanel {
                 message ,
                 "Result",
                 JOptionPane.INFORMATION_MESSAGE);
+
+        menuCard.addScore(new TestResult((int)wpm,accuracy,sentence));
+        this.setVisible(false);
     }
 }

@@ -126,8 +126,6 @@ public class GameArea extends Panel implements KeyListener {
 
 
     }
-
-
     @Override
     public void keyReleased(KeyEvent e) {
 

@@ -27,11 +27,7 @@ public class Main {
         frame.setVisible(true);
     }
 
-    public void showGameCard(String sentence){
-        GameCard gameCard = new GameCard(sentence);
-        frame.getContentPane().add(gameCard);
-        gameCard.setVisible(true);
-    }
+
     public void setLookAndFeel(){
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
